@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class ProgramaLiga{
     public static void main(String[] args) {
         equipe e1 = new equipe();  equipe e2 = new equipe();  equipe e3 = new equipe();  equipe e4 = new equipe();
-        int a[] = new int[4];
+        int a[] = new int[5];
         for (int b = 0; b < a.length; b++) {
             a[b] = 0;
         }
@@ -65,14 +65,14 @@ public class ProgramaLiga{
         }
 
 
-        System.out.println("O Inverno Chegou");
+        System.out.println("O Inverno Chegou \n------------------RESULTADOS------------------");
         e1.ImprimirResultadoEquipe(e1.getPlacar());
         e2.ImprimirResultadoEquipe(e2.getPlacar());
         e3.ImprimirResultadoEquipe(e3.getPlacar());
         e4.ImprimirResultadoEquipe(e4.getPlacar());
         int i2 = 0;
 
-        while (DadosPartidas.size() <= i2){
+        while (DadosPartidas.size() >= i2){
             Jogo P = DadosPartidas.get(i2);
             System.out.println("Partida #" + P.getIDpartida());
             System.out.println("Temperatura: " + P.getTemperatura());

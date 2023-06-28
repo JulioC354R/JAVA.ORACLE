@@ -1,11 +1,8 @@
 package JFo_Pratica8;
 
-import java.util.ArrayList;
 import java.util.Random;
-
 public class Jogo{
-    ArrayList<Jogo> DadosPartidas = new ArrayList<>();
-    Random random = new Random();
+
     private int IDpartida = 1;
     private int temperatura;
     private int golsDaPartidaTimeA;
@@ -67,12 +64,13 @@ public class Jogo{
 
 
 
-    public void IniciarPartida(equipe a, equipe b) {
+    public void IniciarPartida(equipe a,
+     equipe b) {
 
         
         int [] placarA = a.getPlacar();
-        golsDaPartidaTimeA = random.nextInt(10);
-        golsDaPartidaTimeB = random.nextInt(10);
+        golsDaPartidaTimeA = gerarGolsAleatorio();
+        golsDaPartidaTimeB = gerarGolsAleatorio();
         placarA[3] = golsDaPartidaTimeA; //colocando o saldo dos gols dentro do array
         placarA[4] = golsDaPartidaTimeB;
         a.setPlacar(placarA);
@@ -83,5 +81,10 @@ public class Jogo{
         b.setPlacar(placarB);
 
         
+        
+    }
+        public int gerarGolsAleatorio() {
+        Random random = new Random();
+        return random.nextInt(10);
     }
 }
